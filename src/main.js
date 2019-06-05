@@ -8,8 +8,9 @@ $(document).ready(function() {
   // let dinoHangman;
   $('#wordGenerator').click(function() {
     let dinoHangman = new DinoHangman();
+    //console.log(dinoHangman.test);
     // let word = dinoHangman.wordGenerator();
-    // console.log(dinoHangman.word);
+     console.log(dinoHangman.test);
     $("wordHidden").text(dinoHangman.word);
   });
 });
