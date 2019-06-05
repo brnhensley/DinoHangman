@@ -1,27 +1,15 @@
-// import { ClassName } from './class-name.js';
+import { DinoHangman } from './dino-hangman.js';
 import $ from 'jquery';
 import 'bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './styles.css';
 
 $(document).ready(function() {
-  $('#wordGenerator').click(function(event) {
-    event.preventDefault();
-    let words = $('#words').val();
-    $('#words').val("");
-    $.ajax({
-      url: `http://dinoipsum.herokuapp.com/api/?paragraphs=1&words=1`,
-      type: 'GET',
-      data: {
-        format: 'json'
-      },
-      success: function(response) {
-        $('#wordGuess').text(`${response}`);
-        console.log(response);
-      },
-      error: function() {
-        $('#errors').text("There was a problem generating your word. Try again.");
-      }
-    });
+  // let dinoHangman;
+  $('#wordGenerator').click(function() {
+    let dinoHangman = new DinoHangman();
+    // let word = dinoHangman.wordGenerator();
+    // console.log(dinoHangman.word);
+    $("wordHidden").text(dinoHangman.word);
   });
 });
